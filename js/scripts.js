@@ -23,3 +23,31 @@ console.log(resultExpenses)
 
 
 // Задача 2
+
+let hobbiesOfAlice = {
+    "Алиса": ["рисование", "плавание", "чтение"],
+    "Боб": ["бег", "чтение", "шахматы"]
+};
+
+let hobbiesOfTom = {
+    "Том": ["рисование", "шахматы", "гитара"],
+    "Джейн": ["плавание", "бег", "гитара"]
+};
+
+let groupOfHobbies = [];
+function findCommonHobbies (object1, object2) {
+    hobbiesOfAlice["Алиса"].forEach(function(item, index, array) {
+        groupOfHobbies.push(item);
+    })
+    hobbiesOfAlice["Боб"].forEach(function(item,index,array){
+        groupOfHobbies.push(item);
+    })
+    hobbiesOfTom["Том"].forEach(function(item, index, array){
+        groupOfHobbies.push(item)
+    })
+    hobbiesOfTom["Джейн"].forEach(function(item, index, array){
+        groupOfHobbies.push(item)
+    })
+}
+findCommonHobbies()
+console.log(groupOfHobbies)
