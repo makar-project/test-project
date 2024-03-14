@@ -1,53 +1,28 @@
-// Задача 1
-let monthlyExpenses = {
-    "Продукты": 15000,
-    "Коммунальные услуги": 5000,
-    "Развлечения": 8000,
-    "Транспорт": 4000,
-}
+//* Напишите функцию, которая принимает массив чисел и возвращает новый массив, содержащий только уникальные числа из исходного массива. Используйте Set для решения этой задачи.
 
-let resultExpenses = 0;
 
-function calculateExpenses () {
-    let i = 0 ;
-    let values = Object.values(monthlyExpenses)
-    while (i < Object.keys(monthlyExpenses).length) {
-        resultExpenses += values[i] * 12
-        i++
+function uniqueNumbers(numbers) {
+    let numbersOfUnique = new Set(numbers);
+    return numbersOfUnique
+  }
+const numbers = [1, 2, 2, 3, 4, 4, 5];
+console.log(uniqueNumbers(numbers)); // [1, 2, 3, 4, 5]
+
+
+
+//* Предположим, у вас есть два массива, представляющие два разных набора данных (например, список имен). Необходимо написать функцию, которая возвращает массив, содержащий только те элементы, которые присутствуют в обоих массивах (пересечение массивов). Используйте Set для решения этой задачи.
+function findCommonElements(arr1, arr2) {
+    let commonNames = new Set(arr1);
+    for (let name of array2) {
+        commonNames.add(name)
     }
+    return commonNames
 }
-calculateExpenses()
-console.log(resultExpenses)
+
+const array1 = ['Alice', 'Bob', 'Charlie', 'Diana'];
+const array2 = ['Bob', 'Diana', 'Eve', 'Alice'];
+console.log(findCommonElements(array1, array2)); 
 
 
-
-
-// Задача 2
-
-let hobbiesOfAlice = {
-    "Алиса": ["рисование", "плавание", "чтение"],
-    "Боб": ["бег", "чтение", "шахматы"]
-};
-
-let hobbiesOfTom = {
-    "Том": ["рисование", "шахматы", "гитара"],
-    "Джейн": ["плавание", "бег", "гитара"]
-};
-
-let groupOfHobbies = [];
-function findCommonHobbies (object1, object2) {
-    hobbiesOfAlice["Алиса"].forEach(function(item, index, array) {
-        groupOfHobbies.push(item);
-    })
-    hobbiesOfAlice["Боб"].forEach(function(item,index,array){
-        groupOfHobbies.push(item);
-    })
-    hobbiesOfTom["Том"].forEach(function(item, index, array){
-        groupOfHobbies.push(item)
-    })
-    hobbiesOfTom["Джейн"].forEach(function(item, index, array){
-        groupOfHobbies.push(item)
-    })
-}
-findCommonHobbies()
-console.log(groupOfHobbies)
+//!   spread operator
+//!  Array.from
