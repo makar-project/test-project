@@ -72,18 +72,22 @@ const messages = [
 
 ]; 
 function analyzeMessages(messages) {
+
   let users = new Set()
   let userInfo = new Map()
+  let messagesUsers;
+
   messages.forEach(function(item){
     users.add(item.userId)
     if (userInfo.has(item.userId)) {
-      userInfo.get(item.message).push(item.message)
+      userInfo.get(item.userId).push(item.message)
     } else {
       userInfo.set(item.userId, [item.message])
     }
   })
-  console.log(userInfo)
-  return users
+  userInfo.forEach((item, key)=>{
+    console.log(key, item)
+  })
 }
 console.log(analyzeMessages(messages))
 
