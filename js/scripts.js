@@ -1,14 +1,24 @@
-async function countdownTimer(seconds){
-    let time = seconds
-    const timer = new Promise((resolve)=>{
-        let Interval = setInterval(()=>{
-            console.log(time)
-            time--
-            if(time < 0) {
-                clearInterval(Interval)
+const btn = document.querySelector('.btn')
+let input = document.querySelector('.input')
+const timeNumber = document.querySelector('.cont_time')
+
+async function timer() {
+    value = input.value
+    const timer_ = new Promise((resolve)=>{
+        const interval = setInterval(()=>{
+            timeNumber.innerHTML = value
+            value--
+            if (value <= 4 ) {
+                timeNumber.style.color = 'red'
+            }
+            if(value < 0) {
+                clearInterval(interval)
                 resolve()
             }
-        },1000)
+        }, 1000)
     })
-}   
-countdownTimer(10)
+}
+btn.addEventListener('click', function(){
+    timeNumber.style.opacity = '100%'
+    timer()
+})

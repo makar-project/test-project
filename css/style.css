@@ -6,4 +6,111 @@ body {
   background-color: rgb(12, 12, 12);
 
   color: #fff;
+  font-family: "Jersey 25", sans-serif;
+}
+.time_title {
+  letter-spacing: 20px;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 20px;
+}
+.time {
+  width: 550px;
+  height: 190px;
+  margin: 150px auto;
+  border: 2px solid white;
+  border-radius: 2rem;
+
+  position: relative;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.wrap_values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  gap: 20px;
+}
+.input {
+  padding: 10px;
+
+  outline: none;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 1rem;
+  bottom: 30px;
+  color: white;
+  font-size: 20px;
+}
+.input::before {
+  position: absolute;
+  content: 's';
+  font-family: "Jersey 25", sans-serif;
+  color: white;
+  top: 0;
+  left: 0;
+  font-size: 40px;
+}
+.btn {
+  padding: 10px;
+
+  outline: none;
+  font-size: 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 1rem;
+  bottom: 30px;
+  color: rgb(74, 235, 74);
+  transition: .2s;
+  cursor: pointer;
+  font-family: "Jersey 25", sans-serif;
+  &:hover {
+    background-color: white;
+    color: rgb(2, 2, 2);
+  }
+}
+.time_word {
+  color: rgb(74, 235, 74);
+  animation: word_anim2 5s infinite ease-in-out;
+  display: inline-block;
+}
+.word2 {
+  animation: word_anim 5s infinite ease-in-out;
+  transform: translateY(-10px);
+}
+.cont_time {
+  text-align: center;
+  font-size: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  opacity: 0%;
+  transition: .5s;
+}
+@keyframes word_anim{
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes word_anim2{
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
